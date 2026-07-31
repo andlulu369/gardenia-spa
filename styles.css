@@ -88,6 +88,28 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 }
 .hero-flat .cta{ position:relative; z-index:3; }
 
+.hero-text{
+  position:absolute; top:7%; left:5%; right:5%; z-index:2;
+  max-width:560px; text-align:left;
+}
+.hero-text h1{
+  font-size:clamp(1.7rem, 5vw, 3rem); font-weight:800; margin:0 0 14px; line-height:1.2;
+  color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.55);
+}
+.rpg-glow{
+  font-family:'Shippori Mincho B1', serif; font-style:italic; color:#fff;
+  text-shadow:0 0 10px rgba(255,255,255,.9), 0 0 26px rgba(180,150,255,.85), 0 0 42px rgba(139,122,214,.65);
+}
+.hero-text .hero-lines{
+  color:#fff; font-size:.92rem; line-height:1.9; margin:0;
+  text-shadow:0 1px 8px rgba(0,0,0,.6);
+}
+.hero-text .hero-lines .accent{ color:#ff9bb0; font-weight:800; }
+@media (max-width:640px){
+  .hero-text{ top:6%; left:5%; right:5%; max-width:none; }
+  .hero-text .hero-lines{ font-size:.82rem; }
+}
+
 /* ---------- Sub-page banner (smaller, photo crop) ---------- */
 .page-banner{
   position:relative; min-height:38vh; display:flex; flex-direction:column;
