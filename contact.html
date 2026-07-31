@@ -94,6 +94,14 @@
 
 <script src="nav.js"></script>
 <script>
+  var params = new URLSearchParams(window.location.search);
+  var presetSubject = params.get('subject');
+  if(presetSubject){
+    var subjectSelect = document.getElementById('subject');
+    if([...subjectSelect.options].some(function(o){ return o.value === presetSubject; })){
+      subjectSelect.value = presetSubject;
+    }
+  }
   document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     document.getElementById('formStatus').style.display = 'block';
