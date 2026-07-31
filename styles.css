@@ -78,9 +78,11 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 }
 .hero-flat{
   aspect-ratio:1536/1024;
-  min-height:60vh;
   justify-content:flex-end;
   padding-bottom:40px;
+}
+@media (max-width:640px){
+  .hero-flat{ padding-bottom:20px; }
 }
 .hero-flat::before{
   content:''; position:absolute; inset:0; z-index:1;
