@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | アンジェロロジー天使学</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">アンジェロロジー天使学<small>ANGELOLOGY BY KAE</small></a>
+    <button class="nav-toggle" aria-label="メニュー">☰</button>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="angelology.html">天使学とは</a></li>
+      <li><a href="retreat.html">リトリート</a></li>
+      <li><a href="activity.html">活動内容</a></li>
+      <li><a href="profile.html">プロフィール</a></li>
+      <li><a href="contact.html" class="active">お問い合わせ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-banner">
+  <div class="crumb">ホーム ＞ お問い合わせ</div>
+  <h1>お問い合わせ</h1>
+  <p>セッションやリトリート、講座についてのご質問はこちらから</p>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="form-card">
+      <div class="form-status" id="formStatus">送信ありがとうございます。ご入力の内容を確認のうえ、2〜3日以内にご連絡いたします。</div>
+
+      <form id="contactForm">
+        <div class="form-row">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input type="text" id="name" name="name" required placeholder="山田 花子">
+        </div>
+
+        <div class="form-row">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.com">
+        </div>
+
+        <div class="form-row">
+          <label for="subject">お問い合わせ内容<span class="req">必須</span></label>
+          <select id="subject" name="subject" required>
+            <option value="">選択してください</option>
+            <option value="session">アンジェロロジー天使学セッションについて</option>
+            <option value="retreat">アンジェロリトリートについて</option>
+            <option value="seminar">講座・セミナーについて</option>
+            <option value="crystal">アンダラクリスタルについて</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">メッセージ<span class="req">必須</span></label>
+          <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">送信する</button>
+        <p class="form-note">※現在このフォームはデザインの確認用です。実際に送信できるようにするには、メール送信サービスとの連携が必要です。</p>
+      </form>
+    </div>
+
+    <div class="contact-alt">
+      <a href="mailto:info@example.com">✉️ info@example.com</a>
+      <a href="#">📷 Instagram</a>
+      <a href="#">📝 公式ブログ</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-nav">
+    <a href="index.html">ホーム</a>
+    <a href="angelology.html">天使学とは</a>
+    <a href="retreat.html">リトリート</a>
+    <a href="activity.html">活動内容</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  ※「アンジェロロジー天使学®」は、KAEが独自に構築した自己理解とスピリチュアルな実践のためのメソッドです。<br>
+  歴史学・神学における「天使学(Angelology)」とは異なる体系です。
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formStatus').style.display = 'block';
+    this.reset();
+    document.getElementById('formStatus').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
