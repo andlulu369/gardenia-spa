@@ -48,7 +48,7 @@ nav ul a.active{opacity:1; color:var(--ribbon-red); border-bottom:2px solid var(
 .hero{
   position:relative; min-height:100svh; display:flex; flex-direction:column;
   justify-content:flex-end; align-items:center; text-align:center;
-  background:url('assets/hero.png') center 18%/cover no-repeat;
+  background:url('hero.png') center 30%/cover no-repeat;
   padding:0 24px 70px;
 }
 .hero::before{
@@ -78,7 +78,7 @@ nav ul a.active{opacity:1; color:var(--ribbon-red); border-bottom:2px solid var(
 .page-banner{
   position:relative; min-height:38vh; display:flex; flex-direction:column;
   justify-content:center; align-items:center; text-align:center;
-  background:url('assets/hero.png') center 8%/cover no-repeat;
+  background:url('hero.png') center 20%/cover no-repeat;
   padding:60px 24px 40px;
 }
 .page-banner::before{
@@ -174,7 +174,7 @@ nav ul a.active{opacity:1; color:var(--ribbon-red); border-bottom:2px solid var(
 }
 .kae-photo{
   width:84px; height:84px; border-radius:50%; flex-shrink:0;
-  background:url('assets/hero.png') center 8%/cover;
+  background:url('hero.png') center 8%/cover;
   border:3px solid var(--gold); box-shadow:0 6px 14px rgba(0,0,0,.2);
 }
 .kae-photo.large{width:150px; height:150px;}
