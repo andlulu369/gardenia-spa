@@ -135,20 +135,45 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
 
 /* ---------- Quest menu cards (home) ---------- */
-.quest-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:20px;}
+.quest-section-wrap{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.06), transparent 40%),
+    linear-gradient(160deg, #3c2c1e, #241a12 70%);
+  border-radius:16px; padding:44px 28px; margin:0 auto;
+  box-shadow:inset 0 0 60px rgba(0,0,0,.5), 0 14px 34px rgba(0,0,0,.3);
+}
+.quest-section-wrap .section-tag, .quest-section-wrap .section-note{color:var(--gold-light,#f3ce87);}
+.quest-section-wrap .section-tag::before, .quest-section-wrap .section-tag::after{color:#e0c98a;}
+.quest-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
 .quest-card{
   position:relative; text-align:center;
-  background:radial-gradient(circle at 15% 8%, rgba(255,255,255,.5), transparent 35%), var(--parchment);
-  border-radius:10px; padding:26px 18px 22px;
-  box-shadow:0 14px 30px rgba(60,40,20,.18), inset 0 0 0 1px rgba(255,255,255,.4);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.6), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(150,110,50,.12), transparent 60%),
+    var(--parchment);
+  border-radius:16px 16px 10px 10px; padding:30px 16px 22px;
+  box-shadow:
+    0 0 0 1px rgba(217,154,47,.5),
+    0 0 0 5px rgba(255,250,235,.7),
+    0 0 0 6px rgba(217,154,47,.3),
+    0 16px 28px rgba(0,0,0,.35);
 }
-.quest-ico{font-size:2rem; margin-bottom:8px;}
+.quest-badge{
+  width:60px; height:60px; margin:0 auto 14px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+  box-shadow:0 6px 14px rgba(0,0,0,.3), inset 0 2px 5px rgba(255,255,255,.5), inset 0 -3px 6px rgba(0,0,0,.15);
+}
+.quest-card.rose .quest-badge{background:radial-gradient(circle at 35% 28%, #ffe2ea, #d8637a 78%);}
+.quest-card.blue .quest-badge{background:radial-gradient(circle at 35% 28%, #e3ecff, #5677b9 78%);}
+.quest-card.green .quest-badge{background:radial-gradient(circle at 35% 28%, #e3f7e8, #4f9b6a 78%);}
+.quest-card.purple .quest-badge{background:radial-gradient(circle at 35% 28%, #ece6fb, #8b7fd6 78%);}
+.quest-card.brown .quest-badge{background:radial-gradient(circle at 35% 28%, #f3e6cc, #a9762f 78%);}
 .quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1rem; color:#8c5a24;}
-.quest-jp{font-size:.78rem; color:var(--ribbon-blue); font-weight:700; margin-bottom:10px;}
-.quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 12px;}
+.quest-jp{font-size:.78rem; color:var(--ribbon-blue); font-weight:700; margin-bottom:12px;}
+.quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 14px;}
 .quest-card .card-link{margin-top:0; font-size:.8rem;}
 @media (max-width:1000px){ .quest-grid{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:560px){ .quest-grid{grid-template-columns:1fr;} }
+@media (max-width:560px){ .quest-grid{grid-template-columns:1fr;} .quest-section-wrap{padding:32px 18px;} }
 .grid2{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
 .card{
   position:relative;
