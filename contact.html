@@ -42,43 +42,49 @@
 
   <section>
     <div class="form-card">
-      <div class="form-status" id="formStatus">送信ありがとうございます。ご入力の内容を確認のうえ、2〜3日以内にご連絡いたします。</div>
+      <form id="contactForm" action="https://formsubmit.co/gardeniaspa22@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="【HPより】お問い合わせがありました">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thanks.html">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-      <form id="contactForm">
         <div class="form-row">
           <label for="name">お名前<span class="req">必須</span></label>
-          <input type="text" id="name" name="name" required placeholder="山田 花子">
+          <input type="text" id="name" name="お名前" required placeholder="山田 花子">
         </div>
 
         <div class="form-row">
           <label for="email">メールアドレス<span class="req">必須</span></label>
-          <input type="email" id="email" name="email" required placeholder="example@mail.com">
+          <input type="email" id="email" name="メールアドレス" required placeholder="example@mail.com">
         </div>
 
         <div class="form-row">
           <label for="subject">お問い合わせ内容<span class="req">必須</span></label>
-          <select id="subject" name="subject" required>
+          <select id="subject" name="お問い合わせ内容" required>
             <option value="">選択してください</option>
             <option value="session">アンジェロロジー天使学セッションについて</option>
             <option value="retreat">アンジェロリトリートについて</option>
             <option value="seminar">講座・セミナーについて</option>
             <option value="crystal">アンダラクリスタルについて</option>
+            <option value="chakra">13次元チャクラチューニングについて</option>
+            <option value="spirit">龍・鳳凰・ペガコーンとの契約について</option>
             <option value="other">その他</option>
           </select>
         </div>
 
         <div class="form-row">
           <label for="message">メッセージ<span class="req">必須</span></label>
-          <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+          <textarea id="message" name="メッセージ" required placeholder="お問い合わせ内容をご記入ください"></textarea>
         </div>
 
         <button type="submit" class="form-submit">送信する</button>
-        <p class="form-note">※現在このフォームはデザインの確認用です。実際に送信できるようにするには、メール送信サービスとの連携が必要です。</p>
+        <p class="form-note">送信いただいた内容は gardeniaspa22@gmail.com に届きます。</p>
       </form>
     </div>
 
     <div class="contact-alt">
-      <a href="mailto:info@example.com">✉️ info@example.com</a>
+      <a href="mailto:gardeniaspa22@gmail.com">✉️ gardeniaspa22@gmail.com</a>
       <a href="https://www.instagram.com/takarazuka_gardeniaspa?igsh=MWZwejNpZGE0dXppaQ==" target="_blank" rel="noopener">📷 Instagram</a>
       <a href="https://ameblo.jp/gardeniaspa/" target="_blank" rel="noopener">📝 公式ブログ</a>
     </div>
@@ -109,12 +115,6 @@
       subjectSelect.value = presetSubject;
     }
   }
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('formStatus').style.display = 'block';
-    this.reset();
-    document.getElementById('formStatus').scrollIntoView({behavior:'smooth', block:'center'});
-  });
 </script>
 </body>
 </html>
