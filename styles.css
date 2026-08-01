@@ -170,32 +170,51 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .quest-section-wrap .section-tag::before, .quest-section-wrap .section-tag::after{color:#e0c98a;}
 .quest-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
 .quest-card{
+  --accent:#8c5a24;
   position:relative; text-align:center;
   background:
+    radial-gradient(ellipse at 12% 18%, rgba(150,110,50,.16), transparent 30%),
+    radial-gradient(ellipse at 85% 75%, rgba(150,110,50,.14), transparent 35%),
+    radial-gradient(ellipse at 30% 90%, rgba(150,110,50,.1), transparent 30%),
     radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.6), transparent 55%),
-    radial-gradient(ellipse at 50% 100%, rgba(150,110,50,.12), transparent 60%),
     var(--parchment);
-  border-radius:16px 16px 10px 10px; padding:30px 16px 22px;
-  box-shadow:
-    0 0 0 1px rgba(217,154,47,.5),
-    0 0 0 5px rgba(255,250,235,.7),
-    0 0 0 6px rgba(217,154,47,.3),
-    0 16px 28px rgba(0,0,0,.35);
+  border-radius:6px; padding:30px 18px 24px;
+  border:2px solid var(--accent);
+  box-shadow:inset 0 0 0 3px rgba(255,250,235,.85), inset 0 0 0 4px var(--accent);
+  filter:drop-shadow(0 14px 20px rgba(0,0,0,.35));
+  clip-path:polygon(
+    1% 2%, 9% 0%, 18% 1.5%, 27% 0%, 36% 1.5%, 45% 0%, 55% 1.5%, 64% 0%, 73% 1.5%, 82% 0%, 91% 1.5%, 99% 0%,
+    100% 8%, 98.5% 17%, 100% 26%, 98.5% 35%, 100% 44%, 98.5% 53%, 100% 62%, 98.5% 71%, 100% 80%, 98.5% 89%, 100% 98%,
+    92% 100%, 83% 98.5%, 74% 100%, 65% 98.5%, 56% 100%, 47% 98.5%, 38% 100%, 29% 98.5%, 20% 100%, 11% 98.5%, 2% 100%,
+    0% 92%, 1.5% 83%, 0% 74%, 1.5% 65%, 0% 56%, 1.5% 47%, 0% 38%, 1.5% 29%, 0% 20%, 1.5% 11%, 0% 2%
+  );
 }
-.quest-badge{
-  width:60px; height:60px; margin:0 auto 14px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center; font-size:1.7rem;
-  box-shadow:0 6px 14px rgba(0,0,0,.3), inset 0 2px 5px rgba(255,255,255,.5), inset 0 -3px 6px rgba(0,0,0,.15);
+.quest-card::before, .quest-card::after{
+  content:''; position:absolute; top:13px; width:8px; height:8px;
+  background:var(--accent); transform:rotate(45deg); opacity:.85;
 }
-.quest-card.rose .quest-badge{background:radial-gradient(circle at 35% 28%, #ffe2ea, #d8637a 78%);}
-.quest-card.blue .quest-badge{background:radial-gradient(circle at 35% 28%, #e3ecff, #5677b9 78%);}
-.quest-card.green .quest-badge{background:radial-gradient(circle at 35% 28%, #e3f7e8, #4f9b6a 78%);}
-.quest-card.purple .quest-badge{background:radial-gradient(circle at 35% 28%, #ece6fb, #8b7fd6 78%);}
-.quest-card.brown .quest-badge{background:radial-gradient(circle at 35% 28%, #f3e6cc, #a9762f 78%);}
-.quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1rem; color:#8c5a24;}
-.quest-jp{font-size:.78rem; color:var(--ribbon-blue); font-weight:700; margin-bottom:12px;}
-.quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 14px;}
-.quest-card .card-link{margin-top:0; font-size:.8rem;}
+.quest-card::before{left:13px;}
+.quest-card::after{right:13px;}
+.quest-icon{
+  width:48px; height:48px; margin:0 auto 12px; color:var(--accent);
+}
+.quest-icon svg{width:100%; height:100%;}
+.quest-card.rose{--accent:#d8637a;}
+.quest-card.blue{--accent:#5677b9;}
+.quest-card.green{--accent:#4f9b6a;}
+.quest-card.purple{--accent:#8b7fd6;}
+.quest-card.brown{--accent:#a9762f;}
+.quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1.05rem; color:var(--accent);}
+.quest-jp{font-size:.78rem; color:#5c4a30; font-weight:700; margin-bottom:12px;}
+.quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 16px; color:var(--ink);}
+.quest-card .card-link{
+  display:inline-block; margin-top:0; font-size:.8rem; font-weight:700;
+  background:var(--accent); color:#fff !important; text-decoration:none;
+  padding:8px 20px; border-radius:999px; border-bottom:none;
+  box-shadow:0 6px 14px rgba(0,0,0,.2);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.quest-card .card-link:hover{transform:translateY(-2px); color:#fff; box-shadow:0 8px 18px rgba(0,0,0,.28);}
 @media (max-width:1000px){ .quest-grid{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:560px){ .quest-grid{grid-template-columns:1fr;} .quest-section-wrap{padding:32px 18px;} }
 .grid2{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
