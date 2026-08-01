@@ -168,14 +168,14 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 }
 .quest-section-wrap .section-tag, .quest-section-wrap .section-note{color:var(--gold-light,#f3ce87);}
 .quest-section-wrap .section-tag::before, .quest-section-wrap .section-tag::after{color:#e0c98a;}
-.quest-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
+.quest-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:18px;}
 .quest-card{
   --accent:#8c5a24;
   position:relative; text-align:center;
   background:
-    radial-gradient(ellipse at 12% 18%, rgba(150,110,50,.16), transparent 30%),
-    radial-gradient(ellipse at 85% 75%, rgba(150,110,50,.14), transparent 35%),
-    radial-gradient(ellipse at 30% 90%, rgba(150,110,50,.1), transparent 30%),
+    radial-gradient(ellipse at 12% 18%, rgba(140,95,40,.22), transparent 32%),
+    radial-gradient(ellipse at 85% 75%, rgba(140,95,40,.2), transparent 38%),
+    radial-gradient(ellipse at 30% 90%, rgba(140,95,40,.15), transparent 32%),
     radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.6), transparent 55%),
     var(--parchment);
   border-radius:6px; padding:30px 18px 24px;
@@ -183,10 +183,10 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   box-shadow:inset 0 0 0 3px rgba(255,250,235,.85), inset 0 0 0 4px var(--accent);
   filter:drop-shadow(0 14px 20px rgba(0,0,0,.35));
   clip-path:polygon(
-    1% 2%, 9% 0%, 18% 1.5%, 27% 0%, 36% 1.5%, 45% 0%, 55% 1.5%, 64% 0%, 73% 1.5%, 82% 0%, 91% 1.5%, 99% 0%,
-    100% 8%, 98.5% 17%, 100% 26%, 98.5% 35%, 100% 44%, 98.5% 53%, 100% 62%, 98.5% 71%, 100% 80%, 98.5% 89%, 100% 98%,
-    92% 100%, 83% 98.5%, 74% 100%, 65% 98.5%, 56% 100%, 47% 98.5%, 38% 100%, 29% 98.5%, 20% 100%, 11% 98.5%, 2% 100%,
-    0% 92%, 1.5% 83%, 0% 74%, 1.5% 65%, 0% 56%, 1.5% 47%, 0% 38%, 1.5% 29%, 0% 20%, 1.5% 11%, 0% 2%
+    2% 4%, 9% 0%, 17% 3%, 26% 0%, 35% 3%, 44% 0%, 54% 3%, 63% 0%, 72% 3%, 81% 0%, 90% 3%, 98% 0%,
+    100% 6%, 97% 16%, 100% 25%, 97% 34%, 100% 43%, 97% 52%, 100% 61%, 97% 70%, 100% 79%, 97% 88%, 100% 96%,
+    91% 100%, 82% 97%, 73% 100%, 64% 97%, 55% 100%, 46% 97%, 37% 100%, 28% 97%, 19% 100%, 10% 97%, 1% 100%,
+    0% 90%, 3% 81%, 0% 72%, 3% 63%, 0% 54%, 3% 45%, 0% 36%, 3% 27%, 0% 18%, 3% 9%, 0% 2%
   );
 }
 .quest-card::before, .quest-card::after{
@@ -204,6 +204,8 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .quest-card.green{--accent:#4f9b6a;}
 .quest-card.purple{--accent:#8b7fd6;}
 .quest-card.brown{--accent:#a9762f;}
+.quest-card.gold{--accent:#c9972e;}
+.quest-card.teal{--accent:#3fa39a;}
 .quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1.05rem; color:var(--accent);}
 .quest-jp{font-size:.78rem; color:#5c4a30; font-weight:700; margin-bottom:12px;}
 .quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 16px; color:var(--ink);}
@@ -215,7 +217,6 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   transition:transform .2s ease, box-shadow .2s ease;
 }
 .quest-card .card-link:hover{transform:translateY(-2px); color:#fff; box-shadow:0 8px 18px rgba(0,0,0,.28);}
-@media (max-width:1000px){ .quest-grid{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:560px){ .quest-grid{grid-template-columns:1fr;} .quest-section-wrap{padding:32px 18px;} }
 .grid2{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
 .card{
@@ -263,6 +264,12 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .quest-copy .eng-tag{
   display:block; font-family:'Shippori Mincho B1',serif; font-weight:800;
   color:var(--ribbon-blue); font-size:.78rem; letter-spacing:.14em; margin-bottom:8px;
+}
+.price-tag{
+  display:inline-block; margin-top:16px; padding:9px 26px; border-radius:999px;
+  background:linear-gradient(135deg, var(--gold), #b9791f); color:#fff;
+  font-weight:800; font-family:'Shippori Mincho B1',serif; font-size:1.05rem;
+  box-shadow:0 8px 18px rgba(0,0,0,.2); letter-spacing:.03em;
 }
 .quest-copy .quest-list{list-style:none; margin:18px 0 0; padding:0;}
 .quest-copy .quest-list li{
