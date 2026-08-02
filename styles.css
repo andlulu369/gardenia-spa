@@ -208,6 +208,7 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .quest-card.teal{--accent:#3fa39a;}
 .quest-card.copper{--accent:#b5651d;}
 .quest-card.skyblue{--accent:#3a7bbf;}
+.quest-card.slate{--accent:#5c6b73;}
 .quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1.05rem; color:var(--accent);}
 .quest-jp{font-size:.78rem; color:#5c4a30; font-weight:700; margin-bottom:12px;}
 .quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 16px; color:var(--ink);}
