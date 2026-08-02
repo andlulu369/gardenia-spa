@@ -242,7 +242,7 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .ribbon.red{background:var(--ribbon-red); color:#fff0f3;}
 .ribbon.pink{background:var(--ribbon-pink); color:#fff0f3;}
 .ribbon.brown{background:#a9762f; color:#fff8ea;}
-.ribbon.purple{background:#8b7fd6; color:#f5f3ff;}
+.ribbon.purple{background:#6f5fc4; color:#fff;}
 
 .card p{font-size:.92rem; line-height:1.85; margin:0 0 10px;}
 .card ul{list-style:none; margin:0; padding:0;}
@@ -275,6 +275,20 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   font-weight:800; font-family:'Shippori Mincho B1',serif; font-size:1.05rem;
   box-shadow:0 8px 18px rgba(0,0,0,.2); letter-spacing:.03em;
 }
+.book-list{list-style:none; margin:18px 0 0; padding:0;}
+.book-list li{margin-bottom:10px;}
+.book-list a{
+  display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+  background:rgba(255,255,255,.5); border:1px solid var(--parchment-dark);
+  border-radius:8px; padding:10px 14px; font-size:.86rem; line-height:1.5;
+  transition:background .2s ease, border-color .2s ease;
+}
+.book-list a:hover{background:rgba(255,255,255,.85); border-color:var(--gold);}
+.book-badge{
+  flex-shrink:0; display:inline-block; padding:4px 12px; border-radius:999px;
+  background:#e0862c; color:#fff; font-weight:800; font-size:.7rem; white-space:nowrap;
+}
+.book-badge.writing{background:#7a7a7a;}
 .quest-copy .quest-list{list-style:none; margin:18px 0 0; padding:0;}
 .quest-copy .quest-list li{
   display:flex; align-items:center; gap:10px; margin-bottom:10px; padding:10px 14px;
