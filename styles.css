@@ -144,6 +144,18 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 }
 .cta:hover{transform:translateY(-3px); box-shadow:0 12px 26px rgba(0,0,0,.4);}
 .cta.small{padding:10px 24px; font-size:.85rem; box-shadow:0 6px 14px rgba(0,0,0,.2);}
+.cta.unlock{
+  padding:22px 52px; font-size:1.2rem;
+  background:linear-gradient(135deg, #fff6de, var(--gold-light));
+  border:2px solid var(--gold);
+  box-shadow:0 10px 26px rgba(0,0,0,.4), 0 0 0 4px rgba(217,154,47,.18);
+  animation:unlock-glow 2.6s ease-in-out infinite;
+}
+.cta.unlock:hover{transform:translateY(-4px) scale(1.02);}
+@keyframes unlock-glow{
+  0%,100%{box-shadow:0 10px 26px rgba(0,0,0,.4), 0 0 0 4px rgba(217,154,47,.18);}
+  50%{box-shadow:0 10px 30px rgba(0,0,0,.4), 0 0 0 9px rgba(217,154,47,.3);}
+}
 
 /* ---------- Section headers ---------- */
 .section-head{text-align:center; margin-bottom:40px;}
