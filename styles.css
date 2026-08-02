@@ -206,6 +206,8 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .quest-card.brown{--accent:#a9762f;}
 .quest-card.gold{--accent:#c9972e;}
 .quest-card.teal{--accent:#3fa39a;}
+.quest-card.copper{--accent:#b5651d;}
+.quest-card.skyblue{--accent:#3a7bbf;}
 .quest-en{font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:1.05rem; color:var(--accent);}
 .quest-jp{font-size:.78rem; color:#5c4a30; font-weight:700; margin-bottom:12px;}
 .quest-card p{font-size:.82rem; line-height:1.7; margin:0 0 16px; color:var(--ink);}
@@ -239,6 +241,8 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
 .ribbon.green{background:var(--ribbon-green); color:#effaf1;}
 .ribbon.red{background:var(--ribbon-red); color:#fff0f3;}
 .ribbon.pink{background:var(--ribbon-pink); color:#fff0f3;}
+.ribbon.brown{background:#a9762f; color:#fff8ea;}
+.ribbon.purple{background:#8b7fd6; color:#f5f3ff;}
 
 .card p{font-size:.92rem; line-height:1.85; margin:0 0 10px;}
 .card ul{list-style:none; margin:0; padding:0;}
