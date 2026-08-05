@@ -303,6 +303,23 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   display:block; font-family:'Shippori Mincho B1',serif; font-weight:800;
   color:var(--ribbon-blue); font-size:.78rem; letter-spacing:.14em; margin-bottom:8px;
 }
+.quest-notice{
+  text-align:center; background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.5), transparent 55%),
+    var(--parchment);
+  border:2px dashed var(--gold); border-radius:12px;
+  padding:32px 28px; box-shadow:0 12px 24px rgba(60,40,20,.15);
+}
+.quest-notice-icon{font-size:1.8rem; margin-bottom:6px;}
+.quest-notice-label{
+  font-family:'Shippori Mincho B1',serif; font-weight:800; font-size:.75rem;
+  letter-spacing:.3em; color:var(--gold); margin-bottom:10px;
+}
+.quest-notice h3{
+  font-size:1.25rem; color:#8c5a24; margin:0 0 10px;
+}
+.quest-notice p{font-size:.88rem; line-height:1.8; color:var(--ink); margin:0;}
+
 .price-tag{
   display:inline-block; margin-top:16px; padding:9px 26px; border-radius:999px;
   background:linear-gradient(135deg, var(--gold), #b9791f); color:#fff;
