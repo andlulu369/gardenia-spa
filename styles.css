@@ -120,8 +120,8 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   padding:60px 24px 40px;
 }
 .page-banner.world-hero{
-  background:url('world-banner.jpg') center 42%/cover no-repeat;
-  min-height:34vh;
+  background:url('world-banner.jpg') center 18%/cover no-repeat;
+  min-height:38vh;
 }
 .page-banner.world-hero::before{ content:none; }
 .sr-only{
@@ -295,6 +295,7 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   box-shadow:0 14px 28px rgba(0,0,0,.3);
 }
 .lore-img.wide{max-width:720px;}
+.lore-img.full{max-width:100%;}
 
 .cert-photo{
   display:block; width:150px; max-width:45%; height:auto; margin:0 auto 18px;
