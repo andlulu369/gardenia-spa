@@ -44,6 +44,16 @@
 <main class="wrap">
 
   <section>
+    <div class="line-cta">
+      <div class="line-cta-icon">💬</div>
+      <h3>公式LINEなら、もっと気軽に。</h3>
+      <p>まずはLINEで、気になることをちょっと聞いてみませんか?<br>やり取りはそのまま公式LINEで続けられます。</p>
+      <a class="cta" href="#" target="_blank" rel="noopener">公式LINEで話しかける →</a>
+      <p class="line-cta-note">※ただいま準備中です。LINEのURLが決まり次第、こちらから直接つながれるようになります。</p>
+    </div>
+  </section>
+
+  <section>
     <div class="form-card">
       <form id="contactForm" action="https://formsubmit.co/gardeniaspa22@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="【HPより】お問い合わせがありました">
@@ -63,19 +73,18 @@
         </div>
 
         <div class="form-row">
-          <label for="subject">お問い合わせ内容<span class="req">必須</span></label>
-          <select id="subject" name="お問い合わせ内容" required>
-            <option value="">選択してください</option>
-            <option value="session">アンジェロロジー天使学セッションについて</option>
-            <option value="retreat">アンジェロリトリートについて</option>
-            <option value="seminar">講座・セミナーについて</option>
-            <option value="crystal">アンダラクリスタルについて</option>
-            <option value="chakra">13次元チャクラチューニングについて</option>
-            <option value="spirit">龍・鳳凰・ペガコーンとの契約について</option>
-            <option value="world">World Quest(世界の秘境リトリート)について</option>
-            <option value="guild">Guild Hall(合同会社マンモスピーポー)について</option>
-            <option value="other">その他</option>
-          </select>
+          <label>興味があること<span class="req">複数選択可</span></label>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" id="chk-session" name="個人セッション" value="興味あり"> 個人セッション</label>
+            <label class="check-item"><input type="checkbox" id="chk-retreat" name="アンジェロリトリート" value="興味あり"> アンジェロリトリート</label>
+            <label class="check-item"><input type="checkbox" id="chk-seminar" name="講座・セミナー" value="興味あり"> 講座・セミナー</label>
+            <label class="check-item"><input type="checkbox" id="chk-crystal" name="アンダラクリスタル" value="興味あり"> アンダラクリスタル</label>
+            <label class="check-item"><input type="checkbox" id="chk-chakra" name="13次元チャクラチューニング" value="興味あり"> 13次元チャクラチューニング</label>
+            <label class="check-item"><input type="checkbox" id="chk-spirit" name="龍・鳳凰・ペガコーンとの契約" value="興味あり"> 龍・鳳凰・ペガコーンとの契約</label>
+            <label class="check-item"><input type="checkbox" id="chk-world" name="World Quest" value="興味あり"> World Quest(世界の秘境リトリート)</label>
+            <label class="check-item"><input type="checkbox" id="chk-guild" name="Guild Hall" value="興味あり"> Guild Hall(合同会社マンモスピーポー)</label>
+            <label class="check-item"><input type="checkbox" id="chk-other" name="その他" value="興味あり"> その他</label>
+          </div>
         </div>
 
         <div class="form-row">
@@ -116,11 +125,20 @@
 <script>
   var params = new URLSearchParams(window.location.search);
   var presetSubject = params.get('subject');
-  if(presetSubject){
-    var subjectSelect = document.getElementById('subject');
-    if([...subjectSelect.options].some(function(o){ return o.value === presetSubject; })){
-      subjectSelect.value = presetSubject;
-    }
+  var subjectMap = {
+    session: 'chk-session',
+    retreat: 'chk-retreat',
+    seminar: 'chk-seminar',
+    crystal: 'chk-crystal',
+    chakra: 'chk-chakra',
+    spirit: 'chk-spirit',
+    world: 'chk-world',
+    guild: 'chk-guild',
+    other: 'chk-other'
+  };
+  if(presetSubject && subjectMap[presetSubject]){
+    var box = document.getElementById(subjectMap[presetSubject]);
+    if(box){ box.checked = true; }
   }
 </script>
 </body>
