@@ -7,6 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .quest-image-map{ position:relative; display:block; }
+  .quest-image-map .lore-img{ display:block; }
+  .quest-hotspot{
+    position:absolute; display:block;
+    background:transparent;
+  }
+  .quest-hotspot:hover{ background:rgba(255,255,255,.08); border-radius:8px; }
+</style>
 </head>
 <body>
 
@@ -84,19 +93,20 @@
         <div class="section-note">一人一人が、自分の宝を思い出し、生かしていくための冒険</div>
       </div>
 
-      <img class="lore-img full" src="img-quest-menu.jpg" alt="あなたのQuestは? ─ Main Quest, Skill Up, Adventure, Magic Awakening, Spirit Alliance, Legendary Item, Guild Hall, World Quest, Adventure Log, Grimoire">
+      <div class="quest-image-map">
+        <img class="lore-img full" src="img-quest-menu.jpg" alt="あなたのQuestは? ─ Main Quest, Skill Up, Adventure, Magic Awakening, Spirit Alliance, Legendary Item, Guild Hall, World Quest, Adventure Log, Grimoire">
 
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px;">
-        <a href="activity.html#session" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Main Quest →</a>
-        <a href="activity.html#seminar" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Skill Up →</a>
-        <a href="retreat.html" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Adventure →</a>
-        <a href="activity.html#chakra" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Magic Awakening →</a>
-        <a href="activity.html#spirit" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Spirit Alliance →</a>
-        <a href="activity.html#crystal" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Legendary Item →</a>
-        <a href="guild.html" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Guild Hall →</a>
-        <a href="world.html" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">World Quest →</a>
-        <a href="https://ameblo.jp/gardeniaspa/" target="_blank" rel="noopener" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Adventure Log →</a>
-        <a href="activity.html#books" style="background:rgba(255,255,255,.08); color:#f3ce87; border:1px solid rgba(243,206,135,.4); border-radius:999px; padding:8px 18px; font-size:.8rem; text-decoration:none;">Grimoire →</a>
+        <a href="activity.html#session" class="quest-hotspot" style="left:1%; top:30%; width:18.5%; height:29%;" aria-label="Main Quest 個人セッション"></a>
+        <a href="activity.html#seminar" class="quest-hotspot" style="left:20.5%; top:30%; width:18.5%; height:29%;" aria-label="Skill Up 講座・セミナー"></a>
+        <a href="retreat.html" class="quest-hotspot" style="left:40%; top:30%; width:18.5%; height:29%;" aria-label="Adventure アンジェロリトリート"></a>
+        <a href="activity.html#chakra" class="quest-hotspot" style="left:59.5%; top:30%; width:18.5%; height:29%;" aria-label="Magic Awakening 13次元チャクラチューニング"></a>
+        <a href="activity.html#spirit" class="quest-hotspot" style="left:79%; top:30%; width:19%; height:29%;" aria-label="Spirit Alliance 龍・鳳凰・ペガコーンとのお繋ぎ"></a>
+
+        <a href="activity.html#crystal" class="quest-hotspot" style="left:1%; top:61%; width:18.5%; height:29%;" aria-label="Legendary Item アンダラクリスタル"></a>
+        <a href="guild.html" class="quest-hotspot" style="left:20.5%; top:61%; width:18.5%; height:29%;" aria-label="Guild Hall 合同会社マンモスピーポー"></a>
+        <a href="world.html" class="quest-hotspot" style="left:40%; top:61%; width:18.5%; height:29%;" aria-label="World Quest 世界の秘境リトリート"></a>
+        <a href="https://ameblo.jp/gardeniaspa/" target="_blank" rel="noopener" class="quest-hotspot" style="left:59.5%; top:61%; width:18.5%; height:29%;" aria-label="Adventure Log ブログ"></a>
+        <a href="activity.html#books" class="quest-hotspot" style="left:79%; top:61%; width:19%; height:29%;" aria-label="Grimoire 書籍"></a>
       </div>
     </div>
   </section>
