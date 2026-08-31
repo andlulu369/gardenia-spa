@@ -7,6 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .quest-image-map{ position:relative; display:block; }
+  .quest-image-map .lore-img{ display:block; }
+  .quest-hotspot{ position:absolute; display:block; background:transparent; }
+  .quest-hotspot:hover{ background:rgba(255,255,255,.08); border-radius:8px; }
+</style>
 </head>
 <body>
 
@@ -44,14 +50,14 @@
 <main class="wrap">
 
   <section style="text-align:center;">
-    <img class="lore-img full" src="img-chakra-full.jpg" alt="Sacred Magic ─ 13次元チャクラチューニング。眠っている魔法を解放する。あなたが受け取るギフトとセッションの流れ。">
+    <div class="quest-image-map">
+      <img class="lore-img full" src="img-chakra-full.jpg" alt="Sacred Magic ─ 13次元チャクラチューニング。眠っている魔法を解放する。あなたが受け取るギフトとセッションの流れ。">
+      <a href="contact.html?subject=chakra" class="quest-hotspot" style="left:27%; top:86.5%; width:38%; height:9%;" aria-label="今すぐ13次元チャクラチューニングを申し込む"></a>
+    </div>
   </section>
 
   <section style="text-align:center;">
     <div class="price-tag" style="font-size:1.2rem; padding:14px 34px;">110,000円</div>
-    <div style="margin-top:22px;">
-      <a class="cta unlock" href="contact.html?subject=chakra">今すぐ13次元チャクラチューニングを申し込む →</a>
-    </div>
   </section>
 
 </main>
