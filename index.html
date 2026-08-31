@@ -47,7 +47,7 @@
     font-size:clamp(1.15rem, 4.2vw, 1.9rem); line-height:1.6;
   }
   .story-piece.show{
-    animation:storyRise 1.3s cubic-bezier(.19,1,.22,1) forwards;
+    animation:storyRise 1.7s cubic-bezier(.19,1,.22,1) forwards;
   }
   @keyframes storyRise{
     0%{ opacity:0; transform:translateY(46px) scale(.82); filter:blur(7px); }
@@ -83,19 +83,19 @@
 
     <div class="story-step" data-step="1">
       <div class="story-piece strong" data-t="0">この世から、</div>
-      <div class="story-piece strong" data-t="700"><span class="rpg-glow">ヒエラルキー</span>は</div>
-      <div class="story-piece strong" data-t="1500">無くなる。</div>
-      <div class="story-piece small" data-t="2600">一人一人の違いが、<span class="accent">その人が持つ宝</span>として生かされる世界へ。</div>
+      <div class="story-piece strong" data-t="1120"><span class="rpg-glow">ヒエラルキー</span>は</div>
+      <div class="story-piece strong" data-t="2400">無くなる。</div>
+      <div class="story-piece small" data-t="4160">一人一人の違いが、<span class="accent">その人が持つ宝</span>として生かされる世界へ。</div>
     </div>
 
     <div class="story-step" data-step="2">
       <div class="story-tag-row">
         <div class="story-piece tags" data-t="0">国境、</div>
-        <div class="story-piece tags" data-t="380">人種、</div>
-        <div class="story-piece tags" data-t="760">年齢、</div>
-        <div class="story-piece tags" data-t="1140">性別、</div>
-        <div class="story-piece tags" data-t="1520">貧富、</div>
-        <div class="story-piece tags" data-t="1900">肩書き。</div>
+        <div class="story-piece tags" data-t="610">人種、</div>
+        <div class="story-piece tags" data-t="1220">年齢、</div>
+        <div class="story-piece tags" data-t="1820">性別、</div>
+        <div class="story-piece tags" data-t="2430">貧富、</div>
+        <div class="story-piece tags" data-t="3040">肩書き。</div>
       </div>
     </div>
 
@@ -123,15 +123,15 @@
 
     <div class="story-step" data-step="8">
       <div class="story-piece strong" data-t="0">人生は、壮大な</div>
-      <div class="story-piece strong" data-t="700"><span class="rpg-glow">RPG</span>。</div>
-      <div class="story-piece small" data-t="1600">自分の宝を思い出し、それを生かしていくための冒険</div>
+      <div class="story-piece strong" data-t="1120"><span class="rpg-glow">RPG</span>。</div>
+      <div class="story-piece small" data-t="2560">自分の宝を思い出し、それを生かしていくための冒険</div>
     </div>
 
     <div class="story-step" data-step="9">
       <div class="story-piece" data-t="0">人生の中で起こる出来事も、</div>
-      <div class="story-piece" data-t="600">人との出会いも、</div>
-      <div class="story-piece" data-t="1200">悩みも、</div>
-      <div class="story-piece" data-t="1800">旅も。</div>
+      <div class="story-piece" data-t="960">人との出会いも、</div>
+      <div class="story-piece" data-t="1920">悩みも、</div>
+      <div class="story-piece" data-t="2880">旅も。</div>
     </div>
 
     <div class="story-step" data-step="10">
@@ -140,7 +140,7 @@
 
     <div class="story-step" data-step="11">
       <div class="story-piece strong" data-t="0">あなたの</div>
-      <div class="story-piece strong" data-t="700"><span class="accent">Quest</span>は?</div>
+      <div class="story-piece strong" data-t="1120"><span class="accent">Quest</span>は?</div>
     </div>
 
   </div>
@@ -383,7 +383,7 @@
 
   var steps = Array.prototype.slice.call(overlay.querySelectorAll('.story-step'));
   // [holdAfterPiecesMs] per step, tuned for a slow, cinematic pace.
-  var holds = [1400, 1200, 1800, 700, 700, 1600, 2200, 1200, 900, 1500, 1400];
+  var holds = [2240, 1920, 2880, 1120, 1120, 2560, 3520, 1920, 1440, 2400, 2240];
   var stepIndex = -1;
   var finished = false;
   var timeouts = [];
@@ -410,7 +410,7 @@
     });
 
     var hold = holds[i] || 1200;
-    var pieceRevealDuration = 1300;
+    var pieceRevealDuration = 1700;
     var totalWait = maxT + pieceRevealDuration + hold;
 
     timeouts.push(setTimeout(function(){
@@ -451,7 +451,7 @@
   }
 
   // Background-only for the first 5 seconds, then begin the sequence.
-  timeouts.push(setTimeout(function(){ runStep(0); }, 5000));
+  timeouts.push(setTimeout(function(){ runStep(0); }, 6000));
 })();
 </script>
 </body>
