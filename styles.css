@@ -255,6 +255,14 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; paddi
   padding:9px 26px; border-radius:6px; color:#fff; font-weight:700;
   font-family:'Shippori Mincho B1',serif; font-size:1rem; white-space:nowrap;
   box-shadow:0 6px 14px rgba(0,0,0,.25);
+  max-width:calc(100vw - 48px);
+}
+@media (max-width:600px){
+  .ribbon{
+    white-space:normal; text-align:center; line-height:1.5;
+    width:calc(100% - 24px); box-sizing:border-box;
+  }
+  .card{ padding-top:64px; }
 }
 .ribbon::before, .ribbon::after{ content:''; position:absolute; bottom:-7px; width:0; height:0; border-style:solid; }
 .ribbon::before{left:-2px; border-width:7px 8px 0 0; border-color:currentColor transparent transparent transparent; filter:brightness(.6);}
