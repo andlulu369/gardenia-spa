@@ -23,21 +23,23 @@
   var playing=false;
   function ui(){btn.classList.toggle('on',playing);btn.setAttribute('aria-pressed',playing?'true':'false');}
   var unlockBound=false;
-  function unlock(){
-    // first real tap/key/click on the page: start (or un-mute) the music
+  var evs=['click','touchend','pointerup','keydown'];
+  function onGesture(ev){
+    if(ev && ev.target && btn.contains(ev.target)){return;}   // the toggle button handles itself
     if(get(localStorage,'bgm-on')==='0'){return;}
     audio.muted=false;
     var p=audio.play();
-    if(p&&p.then){p.then(function(){playing=true;ui();}).catch(function(){bind();});}
+    if(p&&p.then){
+      p.then(function(){
+        playing=true;ui();
+        evs.forEach(function(e){document.removeEventListener(e,onGesture,true);});
+        unlockBound=false;
+      }).catch(function(){ /* keep listening; the next tap will try again */ });
+    }
   }
   function bind(){
     if(unlockBound){return;} unlockBound=true;
-    var evs=['pointerdown','touchstart','touchend','click','keydown'];
-    var go=function(){
-      evs.forEach(function(e){document.removeEventListener(e,go,true);});
-      unlockBound=false; unlock();
-    };
-    evs.forEach(function(e){document.addEventListener(e,go,true);});
+    evs.forEach(function(e){document.addEventListener(e,onGesture,true);});
   }
   function play(){
     var t=parseFloat(get(sessionStorage,'bgm-time')||'0');
@@ -45,10 +47,10 @@
     audio.muted=false;
     var p=audio.play();
     if(p&&p.then){p.then(function(){playing=true;ui();}).catch(function(){
-      // autoplay with sound is blocked: play silently now, un-mute at the first touch
+      // autoplay with sound is blocked: keep the track warm silently, start sound at the first tap
       audio.muted=true;
-      var q=audio.play();
-      if(q&&q.then){q.then(function(){playing=true;ui();}).catch(function(){});}
+      var q=audio.play(); if(q&&q.catch){q.catch(function(){});}
+      playing=false;ui();
       bind();
     });} else {playing=true;ui();}
   }
