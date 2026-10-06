@@ -47,6 +47,22 @@
     .gt-big{font-size:1.2rem;letter-spacing:.12em;}
     .gt-price{font-size:2rem;}
   }
+
+  .gt-scene-img{display:block;width:calc(100% + 52px);margin:-34px -26px 26px;max-width:none;border-radius:16px 16px 0 0;height:auto;}
+  .gt-hero-text{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 22px;text-align:center;color:#f4ecd6;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(8,14,10,.72) 55%,rgba(8,14,10,.9) 100%);}
+  .gt-hero-text .gt-big{font-size:1.9rem;margin:0 0 8px;}
+  .gt-hero-text p{font-family:'Shippori Mincho B1',serif;font-size:.98rem;line-height:1.9;margin:0 0 6px;color:#f4ecd6;}
+  .gt-final{position:relative;overflow:hidden;background:#0d0a05;}
+  .gt-final::before{content:"";position:absolute;inset:0;background:url(img-gt10.jpg) center/cover no-repeat;}
+  .gt-final::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,4,.72) 0%,rgba(10,8,4,.62) 50%,rgba(10,8,4,.82) 100%);}
+  .gt-final>*{position:relative;z-index:1;}
+  @media (max-width:600px){
+    .gt-scene-img{width:calc(100% + 36px);margin:-28px -18px 22px;}
+    .gt-hero-text{padding:36px 12px 14px;}
+    .gt-hero-text .gt-big{font-size:1.15rem;letter-spacing:.1em;}
+    .gt-hero-text p{font-size:.78rem;line-height:1.7;}
+  }
 </style>
 </head>
 <body>
@@ -106,11 +122,17 @@
     <div class="ribbon green" style="margin-bottom:22px;">🇬🇹 New Quest ─ 世界のシャーマンと繋がっていくリトリート《古代マヤ・グアテマラ編》</div>
 
     <div class="gt-hero">
-      <img src="img-guatemala.jpg" alt="MUNDO PERDIDO 失われた世界への扉が開く瞬間。世界のシャーマンと繋がっていくリトリート《古代マヤ・グアテマラ編》">
+      <img src="img-gt1.jpg" alt="失われた世界への扉 ─ 密林に眠るマヤ神殿。入口から黄金の光が差し、奥に火山と日食が見える。">
+      <div class="gt-hero-text">
+        <div class="gt-big">MUNDO PERDIDO</div>
+        <p>失われた世界への扉が開く瞬間。</p>
+        <p>世界のシャーマンと繋がっていくリトリート<br>《古代マヤ・グアテマラ編》</p>
+      </div>
     </div>
     <div class="gt-hero-btn"><a class="cta" href="#gt-scene2">扉の向こうへ進む ↓</a></div>
 
     <div class="gt-scene ">
+      <img class="gt-scene-img" src="img-gt2.jpg" alt="霧に包まれたティカルの神殿" loading="lazy">
       <div class="gt-tag">SCENE 2 ｜ 失われた世界</div>
       <div id="gt-scene2"></div>
       <p>深いジャングルの奥に、<br>古代マヤの神殿が眠る場所、ティカル。</p>
@@ -124,6 +146,7 @@
     </div>
 
     <div class="gt-scene sun">
+      <img class="gt-scene-img" src="img-gt3.jpg" alt="マヤの長老からの招待 ─ 祈りの火と煙" loading="lazy">
       <div class="gt-tag">SCENE 3 ｜ マヤの長老から届いた招待</div>
       <p>今回、現地と太いパイプで繋がり、<br>マヤの長老からご招待いただきました。</p>
       <p>通常の観光では受けることのできない儀式。</p>
@@ -134,6 +157,7 @@
     </div>
 
     <div class="gt-scene night">
+      <img class="gt-scene-img" src="img-gt4.jpg" alt="アティトラン湖と3つの火山、魂の記憶" loading="lazy">
       <div class="gt-tag">SCENE 4 ｜ 私たちは、何を思い出すのか</div>
       <p>古代マヤの人々は、<br>宇宙から何を受け取り、<br>何を見て、何を知っていたのでしょう。</p>
       <p>そして私たちは、その地で<br>何を思い出すのでしょう。</p>
@@ -144,6 +168,7 @@
     </div>
 
     <div class="gt-scene sun">
+      <img class="gt-scene-img" src="img-gt5.jpg" alt="春分の日の特別な儀式" loading="lazy">
       <div class="gt-tag">SCENE 5 ｜ 春分の日、宇宙とマヤが重なる</div>
       <p>開催は、<span class="gt-em">春分の日</span>。</p>
       <p>昼と夜の長さがほぼ等しくなり、<br>光と闇がひとつに溶け合う特別な日。</p>
@@ -158,6 +183,7 @@
     </div>
 
     <div class="gt-scene ">
+      <img class="gt-scene-img" src="img-gt6.jpg" alt="予定のない、導かれる道" loading="lazy">
       <div class="gt-tag">SCENE 6 ｜ 予定のない、導かれる旅</div>
       <p>Kaeのリトリートには、<br>最初から決められた全行程の予定はありません。</p>
       <p>その時に集まった参加者のエネルギー。<br>その土地から届く導き。<br>偶然のように現れる人や場所。</p>
@@ -170,6 +196,7 @@
     </div>
 
     <div class="gt-scene night">
+      <img class="gt-scene-img" src="img-gt7.jpg" alt="本当の自由を体験する旅" loading="lazy">
       <div class="gt-tag">SCENE 7 ｜ 本当の自由を体験する</div>
       <p>ただ誰かについて行くのではなく、<br>誰かに自分の人生を委ねるのでもありません。</p>
       <p>どこへ行くのか。<br>何を体験するのか。<br>参加するのか、しないのか。</p>
@@ -179,6 +206,7 @@
     </div>
 
     <div class="gt-scene sun">
+      <img class="gt-scene-img" src="img-gt8.jpg" alt="好きな期間を選ぶ滞在 ─ 湖畔の朝日" loading="lazy">
       <div class="gt-tag">SCENE 8 ｜ あなたの時間で参加する</div>
       <p><span class="gt-em">滞在期間について</span></p>
       <p>Kaeは、グアテマラに<br>2〜3週間ほど滞在する予定です。</p>
@@ -189,6 +217,7 @@
     </div>
 
     <div class="gt-scene ">
+      <img class="gt-scene-img" src="img-gt9.jpg" alt="「行く」と決めた瞬間から始まる旅" loading="lazy">
       <div class="gt-tag">SCENE 9 ｜ お申し込みの瞬間から、旅は始まる</div>
       <p>この旅は、<br>グアテマラへ到着した日から始まるのではありません。</p>
       <p>「行く」と決めた瞬間から心が動き始め、<br>目の前に現れる出来事の一つひとつが、<br>旅へ向かうための大切な内観になります。</p>
