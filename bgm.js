@@ -5,7 +5,7 @@
   function get(s,k){try{return s.getItem(k);}catch(e){return null;}}
   function set(s,k,v){try{s.setItem(k,v);}catch(e){}}
   var audio=new Audio();
-  audio.src=SRC; audio.loop=true; audio.volume=VOL; audio.preload='none';
+  audio.src=SRC; audio.loop=true; audio.volume=VOL; audio.preload='auto';
   var btn=document.createElement('button');
   btn.type='button'; btn.id='bgm-toggle'; btn.setAttribute('aria-label','テーマ曲 ON/OFF');
   btn.innerHTML='<span class="bgm-ico">♪</span><span class="bgm-label">Theme Song</span>';
@@ -22,19 +22,37 @@
     '@media (max-width:600px){#bgm-toggle{left:10px;bottom:10px;padding:8px 13px 8px 10px;}}';
   var playing=false;
   function ui(){btn.classList.toggle('on',playing);btn.setAttribute('aria-pressed',playing?'true':'false');}
+  var unlockBound=false;
+  function unlock(){
+    // first real tap/key/click on the page: start (or un-mute) the music
+    if(get(localStorage,'bgm-on')==='0'){return;}
+    audio.muted=false;
+    var p=audio.play();
+    if(p&&p.then){p.then(function(){playing=true;ui();}).catch(function(){bind();});}
+  }
+  function bind(){
+    if(unlockBound){return;} unlockBound=true;
+    var evs=['pointerdown','touchstart','touchend','click','keydown'];
+    var go=function(){
+      evs.forEach(function(e){document.removeEventListener(e,go,true);});
+      unlockBound=false; unlock();
+    };
+    evs.forEach(function(e){document.addEventListener(e,go,true);});
+  }
   function play(){
     var t=parseFloat(get(sessionStorage,'bgm-time')||'0');
     if(t>0){try{audio.currentTime=t;}catch(e){}}
+    audio.muted=false;
     var p=audio.play();
     if(p&&p.then){p.then(function(){playing=true;ui();}).catch(function(){
-      playing=false;ui();
-      var go=function(){document.removeEventListener('pointerdown',go);document.removeEventListener('keydown',go);
-        if(get(localStorage,'bgm-on')==='1'){play();}};
-      document.addEventListener('pointerdown',go,{once:true});
-      document.addEventListener('keydown',go,{once:true});
+      // autoplay with sound is blocked: play silently now, un-mute at the first touch
+      audio.muted=true;
+      var q=audio.play();
+      if(q&&q.then){q.then(function(){playing=true;ui();}).catch(function(){});}
+      bind();
     });} else {playing=true;ui();}
   }
-  function stop(){audio.pause();playing=false;ui();}
+  function stop(){audio.pause();audio.muted=false;playing=false;ui();}
   btn.addEventListener('click',function(){
     if(playing){set(localStorage,'bgm-on','0');stop();}
     else{set(localStorage,'bgm-on','1');play();}
@@ -46,6 +64,6 @@
   fetch(SRC,{method:'HEAD'}).then(function(r){
     if(!r.ok){return;}
     document.head.appendChild(css); document.body.appendChild(btn); ui();
-    if(get(localStorage,'bgm-on')==='1'){play();}
+    if(get(localStorage,'bgm-on')!=='0'){play();}
   }).catch(function(){});
 })();
